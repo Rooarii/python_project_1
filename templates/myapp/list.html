@@ -1,0 +1,14 @@
+<h1>list</h1>
+<h2>Nombre d'articles disponibles ({{Articles|length}})</h2>
+{%for Article in Articles%}
+<article>
+    <h2> <a href ="./Articles/{{Article.id}}/">{{Article.id}} -- {{Article.titre}}</a></h2>
+    <p>{{Article.Commentaire|truncatewords:1}}</p>
+    <p> <a href ="./Articles/{{Article.id}}/">Lire la suite</a> </p>
+</article>
+{%if not forloop.last%}
+<hr>
+{%endif%}
+{%empty%}
+<p>Aucun article disponible</p>
+{%endfor%}

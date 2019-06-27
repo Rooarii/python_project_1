@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooarii</title>
+</head>
+<body>
+    Bonjour nous sommes le <p>{{today}}</p>z
+    <h1>{{filtre|lower}}</h1>
+    <p>Check out our Articles <a href ="./list/">list</a> </p>
+    {%if today.day == 1 %}
+    {%elif today.day == 30 %}
+    C'est le dernier jour du mois
+    {%else%}
+    Ce n'est ni le premier ni le dernier jour de l'année
+    {%endif%}
+    <ul>
+        {%for days in jourSem %}
+        <li>{{days}}</li>
+        {%endfor%}
+
+    </ul>
+</body>
+</html>
